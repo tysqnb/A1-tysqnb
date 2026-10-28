@@ -1,0 +1,17 @@
+# compiled classes
+bin/
+out/
+*.class
+
+# Eclipse
+.settings/
+.metadata/
+
+# IDEA / VS Code
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
