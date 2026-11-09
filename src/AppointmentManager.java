@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -175,6 +176,66 @@ public class AppointmentManager {
             }
         }
         return inTimeOrder(matches);
+    }
+
+    /**
+     * Cancels the booking for one professional at one time.
+     *
+     * @param professionalId the professional's ID
+     * @param time           the appointment time
+     * @return a cancellation message, or a warning if no such booking exists
+     * @throws IllegalArgumentException if either argument is null or blank
+     */
+    public String cancelAppointment(String professionalId, TimeSlot time) {
+        if (professionalId == null || professionalId.trim().isEmpty()) {
+            throw new IllegalArgumentException("A professional ID is required to cancel a booking.");
+        }
+        if (time == null) {
+            throw new IllegalArgumentException("An appointment time is required to cancel a booking.");
+        }
+        String wantedId = professionalId.trim();
+        // An Iterator is used because the list is changed while it is being
+        // walked; removing through the iterator keeps it consistent.
+        Iterator<Appointment> iterator = appointments.iterator();
+        while (iterator.hasNext()) {
+            Appointment appointment = iterator.next();
+            if (appointment.getProfessional().getId().equals(wantedId)
+                    && appointment.getTime().equals(time)) {
+                iterator.remove();
+                return "Cancelled " + appointment.getReference() + ": "
+                        + appointment.getPatient().getName() + " with "
+                        + appointment.getProfessional().getName() + " at " + time + ".";
+            }
+        }
+        return "WARNING: no appointment found for professional " + wantedId + " at " + time + ".";
+    }
+
+    /**
+     * Cancels every booking belonging to one patient, found by phone number.
+     *
+     * @param phone the patient's mobile number
+     * @return a cancellation message, or a warning if the patient has no
+     *         bookings
+     * @throws IllegalArgumentException if the number is null or blank
+     */
+    public String cancelAppointmentsForPatient(String phone) {
+        String wantedPhone = normalisePhone(phone);
+        List<String> cancelledReferences = new ArrayList<>();
+        String patientName = null;
+        Iterator<Appointment> iterator = appointments.iterator();
+        while (iterator.hasNext()) {
+            Appointment appointment = iterator.next();
+            if (appointment.getPatient().getPhone().equals(wantedPhone)) {
+                cancelledReferences.add(appointment.getReference());
+                patientName = appointment.getPatient().getName();
+                iterator.remove();
+            }
+        }
+        if (cancelledReferences.isEmpty()) {
+            return "WARNING: no appointments found for phone number " + wantedPhone + ".";
+        }
+        return "Cancelled " + cancelledReferences.size() + " appointment(s) for "
+                + patientName + " (" + wantedPhone + "): " + String.join(", ", cancelledReferences) + ".";
     }
 
     /**
