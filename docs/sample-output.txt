@@ -1,0 +1,358 @@
+﻿
+==============================================================================
+PART 3 - HEALTH PROFESSIONALS
+==============================================================================
+
+The clinic has 8 health professionals. They are kept in one HealthProfessional[]
+and printed in a loop, so adding a new type does not change this code.
+
+------------------------------------------------------------------------------
+[1 of 8]
+Role          : General Practitioner
+ID            : 1001
+Name          : Dr Amelia Hart
+Works         : Monday, Tuesday, Wednesday, Thursday, Friday
+Duties        : Sees walk-in and booked patients, diagnoses common conditions, refers on to specialists.
+Registration  : MED-4417
+Consulting    : Room 3
+------------------------------------------------------------------------------
+[2 of 8]
+Role          : General Practitioner
+ID            : 1002
+Name          : Dr Ravi Menon
+Works         : Monday, Tuesday, Thursday, Friday
+Duties        : Sees walk-in and booked patients, diagnoses common conditions, refers on to specialists.
+Registration  : MED-5120
+Consulting    : Room 5
+------------------------------------------------------------------------------
+[3 of 8]
+Role          : General Practitioner
+ID            : 1003
+Name          : Dr Sophie Nguyen
+Works         : Monday, Tuesday, Wednesday
+Duties        : Sees walk-in and booked patients, diagnoses common conditions, refers on to specialists.
+Registration  : MED-6684
+Consulting    : Room 2
+------------------------------------------------------------------------------
+[4 of 8]
+Role          : Specialist - Cardiology
+ID            : 2001
+Name          : Dr Peter Vasquez
+Works         : Tuesday, Thursday
+Duties        : Sees referred patients for cardiology assessment and ongoing management.
+Registration  : MED-3321
+Specialty     : Cardiology
+------------------------------------------------------------------------------
+[5 of 8]
+Role          : Surgeon - Orthopaedics
+ID            : 2002
+Name          : Dr Helen Okafor
+Works         : Monday, Wednesday, Friday
+Duties        : Runs an operating list in Theatre B and holds post-operative reviews.
+Registration  : MED-7788
+Specialty     : Orthopaedics
+Theatre       : Theatre B
+------------------------------------------------------------------------------
+[6 of 8]
+Role          : Nurse
+ID            : 3001
+Name          : Grace Lim
+Works         : Monday, Tuesday, Wednesday, Thursday, Friday
+Duties        : Prepares patients, takes blood and other samples, and runs wound care in Treatment Room 1.
+Ward          : Treatment Room 1
+Registration  : Registered Nurse
+------------------------------------------------------------------------------
+[7 of 8]
+Role          : Nurse
+ID            : 3002
+Name          : Tom Baker
+Works         : Monday, Wednesday, Friday
+Duties        : Prepares patients, takes blood and other samples, and runs wound care in Treatment Room 2.
+Ward          : Treatment Room 2
+Registration  : Enrolled Nurse
+------------------------------------------------------------------------------
+[8 of 8]
+Role          : Dietitian
+ID            : 4001
+Name          : Nadia Rahman
+Works         : Monday, Wednesday, Friday
+Duties        : Builds and reviews eating plans for patients referred with diabetes.
+Focus area    : Diabetes
+Consulting    : Room 7
+------------------------------------------------------------------------------
+
+Roles and duties, called through the base type:
+
+  General Practitioner             Sees walk-in and booked patients, diagnoses common conditions, refers on to specialists.
+  General Practitioner             Sees walk-in and booked patients, diagnoses common conditions, refers on to specialists.
+  General Practitioner             Sees walk-in and booked patients, diagnoses common conditions, refers on to specialists.
+  Specialist - Cardiology          Sees referred patients for cardiology assessment and ongoing management.
+  Surgeon - Orthopaedics           Runs an operating list in Theatre B and holds post-operative reviews.
+  Nurse                            Prepares patients, takes blood and other samples, and runs wound care in Treatment Room 1.
+  Nurse                            Prepares patients, takes blood and other samples, and runs wound care in Treatment Room 2.
+  Dietitian                        Builds and reviews eating plans for patients referred with diabetes.
+
+Type specific behaviour:
+
+  Dr Amelia Hart prescribed Amoxicillin 500 mg, three times daily for Jane Smith (registration MED-4417).
+  Dr Peter Vasquez prescribed Atorvastatin 20 mg nightly for Jane Smith (registration MED-3321).
+  Grace Lim took a blood sample from Jane Smith in Treatment Room 1 (sample logged).
+  Dr Helen Okafor will perform knee arthroscopy on Jane Smith in Theatre B.
+  Nadia Rahman set a diabetes plan for Jane Smith: lower sodium, 1800 kcal per day.
+
+Validation in action:
+
+  Refused to create a professional: Health professional ID must contain digits only: 12A
+  Refused to create a nurse: Ward is required for a nurse.
+
+Equality by ID:
+  gpHart.equals(a second object with ID 1001) -> true
+  gpHart.equals(gpMenon)                      -> false
+  gpHart.worksOn(Day.SATURDAY)                -> false
+
+==============================================================================
+PARTS 4, 5 AND 6 - APPOINTMENTS
+==============================================================================
+
+Patients registered for today:
+  Jane Smith (0412 345 678)
+  Marcus Webb (0433 902 118)
+  Aisha Khan (0455 771 020)
+  Liam O'Brien (0421 660 945)
+
+PART 4 - a single appointment
+
+Appointment A-0001
+  Time          : 08:00
+  Patient       : Jane Smith (0412 345 678)
+  Professional  :
+      Role          : General Practitioner
+      ID            : 1001
+      Name          : Dr Amelia Hart
+      Works         : Monday, Tuesday, Wednesday, Thursday, Friday
+      Duties        : Sees walk-in and booked patients, diagnoses common conditions, refers on to specialists.
+      Registration  : MED-4417
+      Consulting    : Room 3
+
+An appointment cannot be built with a missing professional:
+  Refused: An appointment needs a health professional.
+
+PART 5 - managing the appointment collection
+
+Clinic schedule: 08:00 to 16:00, 30 minute slots (16 slots per day)
+Appointments on the books at the start: 0
+
+Adding appointments:
+  Booked A-0001: Jane Smith with Dr Amelia Hart at 08:00.
+  Booked A-0002: Marcus Webb with Dr Ravi Menon at 08:00.
+  Booked A-0003: Aisha Khan with Dr Peter Vasquez at 09:30.
+  Booked A-0004: Liam O'Brien with Grace Lim at 10:00.
+  Booked A-0005: Jane Smith with Nadia Rahman at 11:30.
+  Booked A-0006: Aisha Khan with Dr Sophie Nguyen at 13:00.
+  Booked A-0007: Marcus Webb with Dr Helen Okafor at 14:00.
+
+Error cases:
+  WARNING: Dr Peter Vasquez (2001) is already booked at 09:30.
+  WARNING: 07:30 is not one of the clinic's time slots (08:00 to 16:00, 30 minute slots).
+  WARNING: 12:15 is not one of the clinic's time slots (08:00 to 16:00, 30 minute slots).
+  WARNING: 16:00 is not one of the clinic's time slots (08:00 to 16:00, 30 minute slots).
+
+All appointments, sorted from earliest to latest:
+  7 appointment(s):
+
+  Appointment A-0001
+    Time          : 08:00
+    Patient       : Jane Smith (0412 345 678)
+    Professional  :
+        Role          : General Practitioner
+        ID            : 1001
+        Name          : Dr Amelia Hart
+        Works         : Monday, Tuesday, Wednesday, Thursday, Friday
+        Duties        : Sees walk-in and booked patients, diagnoses common conditions, refers on to specialists.
+        Registration  : MED-4417
+        Consulting    : Room 3
+
+  Appointment A-0002
+    Time          : 08:00
+    Patient       : Marcus Webb (0433 902 118)
+    Professional  :
+        Role          : General Practitioner
+        ID            : 1002
+        Name          : Dr Ravi Menon
+        Works         : Monday, Tuesday, Wednesday, Thursday, Friday
+        Duties        : Sees walk-in and booked patients, diagnoses common conditions, refers on to specialists.
+        Registration  : MED-5120
+        Consulting    : Room 5
+
+  Appointment A-0003
+    Time          : 09:30
+    Patient       : Aisha Khan (0455 771 020)
+    Professional  :
+        Role          : Specialist - Cardiology
+        ID            : 2001
+        Name          : Dr Peter Vasquez
+        Works         : Monday, Tuesday, Wednesday, Thursday, Friday
+        Duties        : Sees referred patients for cardiology assessment and ongoing management.
+        Registration  : MED-3321
+        Specialty     : Cardiology
+
+  Appointment A-0004
+    Time          : 10:00
+    Patient       : Liam O'Brien (0421 660 945)
+    Professional  :
+        Role          : Nurse
+        ID            : 3001
+        Name          : Grace Lim
+        Works         : Monday, Tuesday, Wednesday, Thursday, Friday
+        Duties        : Prepares patients, takes blood and other samples, and runs wound care in Treatment Room 1.
+        Ward          : Treatment Room 1
+        Registration  : Registered Nurse
+
+  Appointment A-0005
+    Time          : 11:30
+    Patient       : Jane Smith (0412 345 678)
+    Professional  :
+        Role          : Dietitian
+        ID            : 4001
+        Name          : Nadia Rahman
+        Works         : Monday, Wednesday, Friday
+        Duties        : Builds and reviews eating plans for patients referred with diabetes.
+        Focus area    : Diabetes
+        Consulting    : Room 7
+
+  Appointment A-0006
+    Time          : 13:00
+    Patient       : Aisha Khan (0455 771 020)
+    Professional  :
+        Role          : General Practitioner
+        ID            : 1003
+        Name          : Dr Sophie Nguyen
+        Works         : Monday, Tuesday, Wednesday, Thursday, Friday
+        Duties        : Sees walk-in and booked patients, diagnoses common conditions, refers on to specialists.
+        Registration  : MED-6684
+        Consulting    : Room 2
+
+  Appointment A-0007
+    Time          : 14:00
+    Patient       : Marcus Webb (0433 902 118)
+    Professional  :
+        Role          : Surgeon - Orthopaedics
+        ID            : 2002
+        Name          : Dr Helen Okafor
+        Works         : Monday, Tuesday, Wednesday, Thursday, Friday
+        Duties        : Runs an operating list in Theatre B and holds post-operative reviews.
+        Registration  : MED-7788
+        Specialty     : Orthopaedics
+        Theatre       : Theatre B
+
+Filtered by health professional ID 1001:
+  1 appointment(s):
+
+  Appointment A-0001
+    Time          : 08:00
+    Patient       : Jane Smith (0412 345 678)
+    Professional  :
+        Role          : General Practitioner
+        ID            : 1001
+        Name          : Dr Amelia Hart
+        Works         : Monday, Tuesday, Wednesday, Thursday, Friday
+        Duties        : Sees walk-in and booked patients, diagnoses common conditions, refers on to specialists.
+        Registration  : MED-4417
+        Consulting    : Room 3
+
+Filtered by patient phone 0455 771 020:
+  2 appointment(s):
+
+  Appointment A-0003
+    Time          : 09:30
+    Patient       : Aisha Khan (0455 771 020)
+    Professional  :
+        Role          : Specialist - Cardiology
+        ID            : 2001
+        Name          : Dr Peter Vasquez
+        Works         : Monday, Tuesday, Wednesday, Thursday, Friday
+        Duties        : Sees referred patients for cardiology assessment and ongoing management.
+        Registration  : MED-3321
+        Specialty     : Cardiology
+
+  Appointment A-0006
+    Time          : 13:00
+    Patient       : Aisha Khan (0455 771 020)
+    Professional  :
+        Role          : General Practitioner
+        ID            : 1003
+        Name          : Dr Sophie Nguyen
+        Works         : Monday, Tuesday, Wednesday, Thursday, Friday
+        Duties        : Sees walk-in and booked patients, diagnoses common conditions, refers on to specialists.
+        Registration  : MED-6684
+        Consulting    : Room 2
+
+Filtered by a professional with no bookings (9999):
+  0 appointment(s) found.
+
+Cancelling:
+  Cancelled A-0003: Aisha Khan with Dr Peter Vasquez at 09:30.
+  WARNING: no appointment found for professional 2001 at 10:30.
+  WARNING: no appointment found for professional 2001 at 09:30.
+  Cancelled 2 appointment(s) for Jane Smith (0412345678): A-0001, A-0005.
+  WARNING: no appointments found for phone number 0499000111.
+
+Appointments after cancelling (4 left):
+  4 appointment(s):
+
+  Appointment A-0002
+    Time          : 08:00
+    Patient       : Marcus Webb (0433 902 118)
+    Professional  :
+        Role          : General Practitioner
+        ID            : 1002
+        Name          : Dr Ravi Menon
+        Works         : Monday, Tuesday, Wednesday, Thursday, Friday
+        Duties        : Sees walk-in and booked patients, diagnoses common conditions, refers on to specialists.
+        Registration  : MED-5120
+        Consulting    : Room 5
+
+  Appointment A-0004
+    Time          : 10:00
+    Patient       : Liam O'Brien (0421 660 945)
+    Professional  :
+        Role          : Nurse
+        ID            : 3001
+        Name          : Grace Lim
+        Works         : Monday, Tuesday, Wednesday, Thursday, Friday
+        Duties        : Prepares patients, takes blood and other samples, and runs wound care in Treatment Room 1.
+        Ward          : Treatment Room 1
+        Registration  : Registered Nurse
+
+  Appointment A-0006
+    Time          : 13:00
+    Patient       : Aisha Khan (0455 771 020)
+    Professional  :
+        Role          : General Practitioner
+        ID            : 1003
+        Name          : Dr Sophie Nguyen
+        Works         : Monday, Tuesday, Wednesday, Thursday, Friday
+        Duties        : Sees walk-in and booked patients, diagnoses common conditions, refers on to specialists.
+        Registration  : MED-6684
+        Consulting    : Room 2
+
+  Appointment A-0007
+    Time          : 14:00
+    Patient       : Marcus Webb (0433 902 118)
+    Professional  :
+        Role          : Surgeon - Orthopaedics
+        ID            : 2002
+        Name          : Dr Helen Okafor
+        Works         : Monday, Tuesday, Wednesday, Thursday, Friday
+        Duties        : Runs an operating list in Theatre B and holds post-operative reviews.
+        Registration  : MED-7788
+        Specialty     : Orthopaedics
+        Theatre       : Theatre B
+
+A professional who is free at 08:00 can still be booked elsewhere:
+  Booked A-0012: Liam O'Brien with Dr Amelia Hart at 08:30.
+  Appointments now on the books: 5
+
+==============================================================================
+END OF DEMONSTRATION
+==============================================================================
