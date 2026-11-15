@@ -1,0 +1,25 @@
+GenAI declaration - paste ONE of these into the MySCU submission comments.
+
+The brief (page 7) gives the exact wording, so use it as written rather than
+paraphrasing it.
+
+If you used GenAI (pick this one if you used any tool at all):
+
+    I acknowledge that I have used Generative AI tools to complete this
+    assessment in accordance with the conditions outlined in the Assessment
+    Brief. I used [tool name(s)] to [what you actually used it for].
+
+If you did not:
+
+    I acknowledge that I have not knowingly used GenAI to complete this
+    assessment.
+
+Notes
+
+- The declaration has to match what you actually did. Level 2 allows GenAI for
+  research, learning and debugging, and does not allow it to write the code or
+  the comments, so describe the use in those terms only if that is the truth.
+- The unit assessor can ask you to demonstrate how the tool was used, and the
+  video is where you show you understand the code.
+- Keep a copy of this text with the submission so the comments and the README
+  do not contradict each other.
