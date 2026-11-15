@@ -1,0 +1,18 @@
+Submission checklist - MySCU, PROG2004 Assessment 1
+
+1. Zip the project as A1-tysqnb.zip (the whole folder, source included, not
+   just src). Do not include bin/.
+2. Upload the zip to the assessment link.
+3. Comments box:
+   - GitHub link: https://github.com/tysqnb/A1-tysqnb
+   - Video link (OneDrive share link, check it opens in a private window)
+   - GenAI declaration, copied from docs/genai-declaration.txt
+4. Attach the WakaTime report as A1-tysqnb-WakaTime.pdf.
+5. If the repository is private, invite the tutor and unit assessor as
+   collaborators before the due date. A private repo they cannot open is
+   treated as no repository.
+6. Check the repo is public or shared, and that the commits from the last
+   three weeks are visible.
+7. Watch the video back once with the sound on. Five minute limit.
+
+Due: Monday 16 November 2026, 11:59 pm.
