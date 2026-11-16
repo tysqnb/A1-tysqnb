@@ -3,7 +3,7 @@ Submission checklist - MySCU, PROG2004 Assessment 1
 1. Zip the project as A1-tysqnb.zip (the whole folder, source included, not
    just src). Do not include bin/.
 2. Upload the zip to the assessment link.
-3. Comments box:
+3. Comments box: copy docs/submission-comments.txt and fill in the two links
    - GitHub link: https://github.com/tysqnb/A1-tysqnb
    - Video link (OneDrive share link, check it opens in a private window)
    - GenAI declaration, copied from docs/genai-declaration.txt

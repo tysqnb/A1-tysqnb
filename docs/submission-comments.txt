@@ -1,0 +1,20 @@
+Paste this into the MySCU comment box. Fill in the two links before submitting.
+
+---
+
+GitHub repository: https://github.com/tysqnb/A1-tysqnb
+
+Video walkthrough: [paste the OneDrive share link here]
+
+GenAI declaration: [paste one of the two statements from docs/genai-declaration.txt]
+
+---
+
+Notes for me, not for the comment box:
+
+- The repository is private. The tutor and the unit assessor have to be invited
+  as collaborators, or the link above counts for nothing.
+- Open the OneDrive link in a private window before submitting. A link that
+  only works while signed in is the usual way this goes wrong.
+- The WakaTime report is attached separately as A1-tysqnb-WakaTime.pdf.
+- Keep the zip name exact: A1-tysqnb.zip.
