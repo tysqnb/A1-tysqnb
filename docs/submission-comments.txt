@@ -1,10 +1,10 @@
-Paste this into the MySCU comment box. Fill in the two links before submitting.
+Paste this into the MySCU comment box. The link is already in place.
 
 ---
 
 GitHub repository: https://github.com/tysqnb/A1-tysqnb
 
-Video walkthrough: [paste the OneDrive share link here]
+Video walkthrough: https://scuonline-my.sharepoint.com/:v:/g/personal/z_wang_105_student_scu_edu_au/IQAI08dttKldSpUr7oZnhbjoAam72mmiFQX_S_SZG2B9c_U?e=mnwZED
 
 GenAI declaration: [paste one of the two statements from docs/genai-declaration.txt]
 
@@ -12,9 +12,10 @@ GenAI declaration: [paste one of the two statements from docs/genai-declaration.
 
 Notes for me, not for the comment box:
 
-- The repository is private. The tutor and the unit assessor have to be invited
-  as collaborators, or the link above counts for nothing.
-- Open the OneDrive link in a private window before submitting. A link that
-  only works while signed in is the usual way this goes wrong.
+- The video link is an organisation link ("Southern Cross University users
+  with the link can view"), not anonymous. The tenant has anonymous sharing
+  turned off, so this is as open as it gets. A marker signed in with an SCU
+  account gets straight to the video; anyone else gets a sign-in page.
+- The repository is public now, so the tutor does not need an invitation.
 - The WakaTime report is attached separately as A1-tysqnb-WakaTime.pdf.
 - Keep the zip name exact: A1-tysqnb.zip.
