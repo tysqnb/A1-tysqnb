@@ -39,3 +39,24 @@ Checking a link from the command line
 
 It prints the HTTP status and whether the response is a sign-in page. A 200
 with no login redirect is what you want.
+
+The link that did not work
+--------------------------
+    https://scuonline-my.sharepoint.com/:v:/r/personal/z_wang_105.../Documents/A1-tysqnb-video.mp4?d=w6dc...&csf=1&web=1&nav=...MyFilesLinkCopy&e=8xFxZl
+
+Three things give it away:
+
+- `/personal/<your account>/Documents/` is a path inside your own drive, not a
+  sharing endpoint.
+- `d=w6dc7d308a9b44a5d...` is the internal drive item id.
+- `nav=...MyFilesLinkCopy` means it came from "Copy link" in the file details
+  pane, which copies the address you would use while signed in.
+
+Opening it in a browser with no session lands on login.microsoftonline.com, so
+a marker who is not signed in to SCU gets a sign-in wall.
+
+A share link looks different: the segment after the drive name is `/g/personal/...`
+(g for guest) or a `1drv.ms` short link, and it has no `d=` item id. If the
+"Anyone with the link" option is missing or greyed out, the tenant has turned
+anonymous links off; fall back to "People at Southern Cross University" and
+check the result with check_link.ps1 anyway.
