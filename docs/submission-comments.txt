@@ -1,21 +1,40 @@
-Paste this into the MySCU comment box. The link is already in place.
+Paste this into the MySCU comment box.
 
 ---
+
+Zihao Wang (王子豪), student number 25259382
 
 GitHub repository: https://github.com/tysqnb/A1-tysqnb
 
 Video walkthrough: https://scuonline-my.sharepoint.com/:v:/g/personal/z_wang_105_student_scu_edu_au/IQAI08dttKldSpUr7oZnhbjoAam72mmiFQX_S_SZG2B9c_U?e=mnwZED
 
-GenAI declaration: [paste one of the two statements from docs/genai-declaration.txt]
+WakaTime report: attached as A1-25259382-WakaTime.png
+
+GenAI declaration: I acknowledge that I have used Generative AI tools to complete this assessment in accordance with the conditions outlined in the Assessment Brief. I used ChatGPT to research object-oriented programming concepts such as abstract classes, inheritance and Comparable, to assist my learning of unfamiliar Java syntax and library behaviour, and to debug compilation and runtime errors in code that I had already written myself.
 
 ---
 
 Notes for me, not for the comment box:
 
+- Swap "ChatGPT" for whatever I actually used, and drop any clause that is
+  not literally true. If it was also used to check English wording, add
+  "and to check the English in my own written notes". Do not describe it as
+  helping write the code, the comments or the video: Level 2 forbids all
+  three.
+- Naming: everything is now A1-25259382, per the student number. The brief
+  says A1-username, where username is the MySCU login (the example is
+  "A1-lfolkman"). The OneDrive path suggests the login is z_wang_105. If
+  MySCU shows z_wang_105 as the login, rename the zip and the WakaTime
+  attachment to z_wang_105 as well.
 - The video link is an organisation link ("Southern Cross University users
   with the link can view"), not anonymous. The tenant has anonymous sharing
   turned off, so this is as open as it gets. A marker signed in with an SCU
   account gets straight to the video; anyone else gets a sign-in page.
 - The repository is public now, so the tutor does not need an invitation.
-- The WakaTime report is attached separately as A1-tysqnb-WakaTime.pdf.
-- Keep the zip name exact: A1-tysqnb.zip.
+- Keep the zip name exact: A1-25259382.zip, and rebuild it after any change
+  to docs/ so the uploaded copy matches this folder.
+- WakaTime: only a real project view goes in. The dashboard export of
+  "keepalive-src" / Python is not a record of the Java work and must not be
+  attached. Screenshot WakaTime -> Projects filtered to this assignment, or
+  state plainly that WakaTime was not tracking this project and offer the
+  git commit history as the time evidence.
