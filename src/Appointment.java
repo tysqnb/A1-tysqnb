@@ -11,7 +11,7 @@
  * with a missing patient, a missing professional or no time, which is what
  * keeps the manager free of half-built bookings.</p>
  *
- * @author tysqnb
+ * @author Zihao Wang (25259382)
  * @version 1.0
  */
 public class Appointment implements Comparable<Appointment> {

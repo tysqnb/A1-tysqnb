@@ -6,7 +6,7 @@ import java.util.Set;
  * <p>The only extra detail a GP carries is the consulting room they work
  * from. Everything else, including prescribing, comes from {@link Doctor}.</p>
  *
- * @author tysqnb
+ * @author Zihao Wang (25259382)
  * @version 1.0
  */
 public class GeneralPractitioner extends Doctor {

@@ -9,7 +9,7 @@ import java.util.Set;
  * reuses the validation and printing of the level above it, so the class only
  * has to deal with what is genuinely new.</p>
  *
- * @author tysqnb
+ * @author Zihao Wang (25259382)
  * @version 1.0
  */
 public class Surgeon extends Specialist {

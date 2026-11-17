@@ -13,7 +13,7 @@ import java.util.List;
  * <p>The generated list is exposed read-only, so no caller can quietly delete
  * the 09:30 slot and break double booking checks.</p>
  *
- * @author tysqnb
+ * @author Zihao Wang (25259382)
  * @version 1.0
  */
 public class ClinicSchedule {

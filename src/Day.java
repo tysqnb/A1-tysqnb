@@ -7,7 +7,7 @@
  * {@link HealthProfessional} stores, which keeps the set small, ordered and
  * type-safe.</p>
  *
- * @author tysqnb
+ * @author Zihao Wang (25259382)
  * @version 1.0
  */
 public enum Day {

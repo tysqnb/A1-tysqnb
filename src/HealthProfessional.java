@@ -19,7 +19,7 @@ import java.util.Set;
  * object can never be pushed into an invalid state after it has been
  * created.</p>
  *
- * @author tysqnb
+ * @author Zihao Wang (25259382)
  * @version 1.0
  */
 public abstract class HealthProfessional {

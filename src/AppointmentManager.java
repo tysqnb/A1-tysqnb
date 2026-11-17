@@ -18,7 +18,7 @@ import java.util.List;
  * with "WARNING", so the caller can print the result without having to know
  * which happened.</p>
  *
- * @author tysqnb
+ * @author Zihao Wang (25259382)
  * @version 1.0
  */
 public class AppointmentManager {

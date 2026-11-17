@@ -6,7 +6,7 @@
  * strings inside {@link Appointment}) means the phone number is validated in
  * one place, and a booking can be found later by comparing patients.</p>
  *
- * @author tysqnb
+ * @author Zihao Wang (25259382)
  * @version 1.0
  */
 public class Patient {

@@ -9,7 +9,7 @@ import java.util.Set;
  * have nothing in common with doctors, so they extend
  * {@link HealthProfessional} directly.</p>
  *
- * @author tysqnb
+ * @author Zihao Wang (25259382)
  * @version 1.0
  */
 public class Dietitian extends HealthProfessional {

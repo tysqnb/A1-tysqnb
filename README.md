@@ -1,6 +1,8 @@
-# A1-tysqnb
+# A1-25259382
 
 PROG2004 Object Oriented Programming, Assessment 1.
+
+Zihao Wang (王子豪), student number 25259382.
 
 A booking system for a small health clinic. Java only, no interface: there is
 no menu and no login, so `AssignmentOne.main` does the job a receptionist
@@ -82,9 +84,10 @@ second object for the same doctor is still caught.
 
 ## Before submitting
 
-- Zip the project as `A1-tysqnb.zip`.
+- Zip the project as `A1-25259382.zip`, without `bin/`.
 - Add the GitHub link and the video link in the MySCU comments.
-- Attach the WakaTime report as `A1-tysqnb-WakaTime.pdf` (or png/jpg).
+- Attach the WakaTime report separately as `A1-25259382-WakaTime.png`
+  (or jpg/pdf), and keep a copy in `docs/wakatime/`.
 - Put the GenAI declaration in the comments. Template in
   `docs/genai-declaration.txt`.
 

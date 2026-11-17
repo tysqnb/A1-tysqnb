@@ -10,7 +10,7 @@ import java.util.Set;
  * being available on a doctor object and stops {@code prescribe} from being
  * available on a nurse.</p>
  *
- * @author tysqnb
+ * @author Zihao Wang (25259382)
  * @version 1.0
  */
 public class Nurse extends HealthProfessional {

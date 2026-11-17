@@ -9,7 +9,7 @@
  * <p>Instances are immutable: there are no setters, so a slot used inside an
  * appointment can never shift underneath it.</p>
  *
- * @author tysqnb
+ * @author Zihao Wang (25259382)
  * @version 1.0
  */
 public class TimeSlot implements Comparable<TimeSlot> {

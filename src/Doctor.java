@@ -9,7 +9,7 @@ import java.util.Set;
  * {@link Surgeon} inherit the prescribing behaviour instead of each writing
  * their own copy.</p>
  *
- * @author tysqnb
+ * @author Zihao Wang (25259382)
  * @version 1.0
  */
 public abstract class Doctor extends HealthProfessional {

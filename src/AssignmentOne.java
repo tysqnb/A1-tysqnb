@@ -10,7 +10,7 @@ import java.util.List;
  * show that they are handled. Everything below runs from {@link #main(String[])}
  * and prints to the console.</p>
  *
- * @author tysqnb
+ * @author Zihao Wang (25259382)
  * @version 1.0
  */
 public class AssignmentOne {

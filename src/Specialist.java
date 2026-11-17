@@ -7,7 +7,7 @@ import java.util.Set;
  * <p>{@link Surgeon} builds on this class rather than on {@code Doctor},
  * because a surgeon is a specialist with an operating list.</p>
  *
- * @author tysqnb
+ * @author Zihao Wang (25259382)
  * @version 1.0
  */
 public class Specialist extends Doctor {
